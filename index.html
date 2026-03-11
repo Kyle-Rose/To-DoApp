@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List | Kyle Rose</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-container">
+    <div class="about-section">
+        <h3>About This Project</h3>
+        <p>
+            This to-do list application was built using HTML, CSS, and JavaScript.
+            You can add tasks, mark them as completed, or delete them. Tasks are saved
+            in your browser so they remain even after refreshing the page.
+        </p>
+    </div>
+
+    <div class="todo-section">
+        <h1>To-Do List</h1>
+        <p>Keep track of your tasks and stay organized.</p>
+
+        <div class="input-group">
+            <input id="taskInput" type="text" placeholder="Enter a task">
+            <button id="addTaskButton">Add Task</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
