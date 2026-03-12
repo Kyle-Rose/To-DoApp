@@ -51,8 +51,8 @@ The app features a modern card-style design with a unified about section, respon
 🖥 Preview
 Example:
 
-![alt text](LandingPage.png)
-![alt text](Tasks.png)
+![alt text](Images/LandingPage.png)
+![alt text](Images/Tasks.png)
 ---
 
 ## 🛠 Technologies Used
