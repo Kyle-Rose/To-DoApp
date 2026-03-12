@@ -39,14 +39,6 @@ The app features a modern card-style design with a unified about section, respon
 
 ---
 
-## 🛠 Technologies Used
-
-- **HTML5**  
-- **CSS3**  
-- **JavaScript (ES6+)**  
-
----
-
 ## 📁 Project Structure
 /
 ├── index.html
@@ -54,3 +46,17 @@ The app features a modern card-style design with a unified about section, respon
 ├── script.js
 ├── README.md
 └── .gitignore
+
+---
+🖥 Preview
+Example:
+
+![alt text](LandingPage.png)
+![alt text](Tasks.png)
+---
+
+## 🛠 Technologies Used
+
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (ES6+)**  
