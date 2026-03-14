@@ -2,6 +2,12 @@ const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
 const dropdown = document.getElementById("filterDropdown");
+const activeTasksCount = document.getElementById("activeTasks");
+
+function updateActiveTasksCount() {
+    const activeTasks = tasks.filter(task => !task.completed);
+    activeTasksCount.textContent = `Tasks Remaining: ${activeTasks.length}`;
+}
 
 function saveTasks() {
     localStorage.setItem("myChecklist", JSON.stringify(tasks));
@@ -92,6 +98,8 @@ function renderTasks(taskArray = tasks) {
 
         taskList.appendChild(listItem);
     });
+
+    updateActiveTasksCount();
 }
 
 function addTask() {
