@@ -1,61 +1,101 @@
-# 📝 To‑Do List App by Kyle Rose
+# 📝 To-Do List App by Kyle Rose
 
-Live Demo: 👉 [https://kylerose-todoapp.netlify.app/](https://kylerose-todoapp.netlify.app/)
-
----
-
-## 🚀 About
-
-This is a **responsive To‑Do List application** built with **HTML**, **CSS**, and **JavaScript**.  
-
-It allows users to:
-
-- 🟢 Add new tasks  
-- ☑ Mark tasks as completed  
-- 🗑 Delete tasks  
-- 💾 Persist tasks in the browser using `localStorage`, so tasks remain after refreshing the page  
-
-The app features a modern card-style design with a unified about section, responsive layout, and smooth hover effects.
+**Live Demo:** 👉 https://kylerose-todoapp.netlify.app/
 
 ---
 
-## 📌 Features
+# 🚀 About
 
-- Add, complete, and delete tasks  
-- Tasks persist across page reloads using `localStorage`  
-- Unified card layout with about section at the top  
-- Responsive design for desktop and mobile  
-- Clean and modern UI with hover animations  
+This project is a **responsive To-Do List web application** built using **HTML, CSS, and JavaScript**.
+It allows users to create and manage tasks while keeping them saved locally in the browser.
 
----
-
-## 🧠 How It Works
-
-- Captures user input via the task input field  
-- Stores tasks as objects in an array with `completed` status  
-- Dynamically renders tasks in the task list  
-- Saves and retrieves tasks from `localStorage`  
-- Updates task state when checkbox is toggled or task is deleted  
+The app features a **modern card-style interface**, responsive layout, and persistent task storage using **localStorage** so tasks remain even after refreshing the page.
 
 ---
 
-## 📁 Project Structure
+# 📌 Features
+
+* ➕ Add new tasks
+* ✏ Edit existing tasks
+* ☑ Mark tasks as completed
+* 🗑 Delete tasks
+* 🔍 Filter tasks by:
+
+  * All tasks
+  * Active tasks
+  * Completed tasks
+* 📊 Display **remaining task count**
+* 💾 Tasks persist across page reloads using **localStorage**
+* 📱 Responsive design for desktop and mobile
+* 🎨 Clean UI with hover animations and modern styling
+
+---
+
+# 🧠 How It Works
+
+The application uses **JavaScript DOM manipulation** to dynamically manage tasks.
+
+1. User enters a task in the input field.
+2. A task object is created containing:
+
+   * `id`
+   * `text`
+   * `completed` status
+3. Tasks are stored in an array and saved to **localStorage**.
+4. The UI is re-rendered whenever tasks are:
+
+   * added
+   * edited
+   * completed
+   * deleted
+5. The dropdown filter updates the displayed tasks based on their completion status.
+
+---
+
+# 📁 Project Structure
+
+```
 /
 ├── index.html
 ├── style.css
 ├── script.js
 ├── README.md
-└── .gitignore
+└── Images/
+    └── example.png
+```
 
 ---
-🖥 Preview
+
+# 🖥 Preview
+
 Example:
 
-![alt text](Images/example.png)
+![App Preview](Images/example.png)
+
 ---
 
-## 🛠 Technologies Used
+# 🛠 Technologies Used
 
-- **HTML5**  
-- **CSS3**  
-- **JavaScript (ES6+)**  
+* **HTML5** – page structure
+* **CSS3** – layout, styling, and responsive design
+* **JavaScript (ES6+)** – task logic, DOM manipulation, and localStorage
+
+---
+
+# 💡 Future Improvements
+
+Potential enhancements for future versions:
+
+* Clear completed tasks button
+* Drag-and-drop task ordering
+* Due dates for tasks
+* Dark mode
+* Keyboard accessibility improvements
+
+---
+
+# 👨‍💻 Author
+
+**Kyle Rose**
+
+GitHub: https://github.com/yourusername
