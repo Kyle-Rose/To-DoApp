@@ -1,6 +1,7 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTaskButton");
 const taskList = document.getElementById("taskList");
+const dropdown = document.getElementById("filterDropdown");
 
 function saveTasks() {
     localStorage.setItem("myChecklist", JSON.stringify(tasks));
@@ -13,10 +14,29 @@ function loadTasks() {
 
 let tasks = loadTasks();
 
-function renderTasks() {
+function filterTasks() {
+    const filterValue = dropdown.value;
+
+    let filteredTasks = tasks;
+
+    if (filterValue === "active") {
+        filteredTasks = tasks.filter(task => !task.completed);
+    }
+
+    if (filterValue === "completed") {
+        filteredTasks = tasks.filter(task => task.completed);
+    }
+
+    renderTasks(filteredTasks);
+}
+
+dropdown.addEventListener("change", filterTasks);
+
+function renderTasks(taskArray = tasks) {
+
     taskList.innerHTML = "";
 
-    tasks.forEach(task => {
+    taskArray.forEach(task => {
 
         const listItem = document.createElement("li");
 
@@ -28,11 +48,11 @@ function renderTasks() {
 
         const textNode = document.createTextNode(task.text);
 
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-
-        const editButton = document.createElement("button");    
-        editButton.textContent = "Edit";
 
         if (task.completed) {
             label.style.textDecoration = "line-through";
@@ -41,21 +61,25 @@ function renderTasks() {
         checkbox.addEventListener("change", () => {
             task.completed = checkbox.checked;
             saveTasks();
-            renderTasks();
+            filterTasks();
         });
 
         deleteButton.addEventListener("click", () => {
             tasks = tasks.filter(t => t.id !== task.id);
             saveTasks();
-            renderTasks();
+            filterTasks();
         });
 
         editButton.addEventListener("click", () => {
             const newText = prompt("Edit task:", task.text);
+
             if (newText !== null) {
-                task.text = newText.trim() || task.text;
-                saveTasks();
-                renderTasks();
+                const trimmedText = newText.trim();
+                if (trimmedText !== "") {
+                    task.text = trimmedText;
+                    saveTasks();
+                    filterTasks();
+                }
             }
         });
 
@@ -86,7 +110,7 @@ function addTask() {
 
     saveTasks();
 
-    renderTasks();
+    filterTasks();
 
     taskInput.value = "";
 }
@@ -99,4 +123,4 @@ taskInput.addEventListener("keypress", function(e) {
     }
 });
 
-renderTasks();
+filterTasks();
