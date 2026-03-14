@@ -31,6 +31,9 @@ function renderTasks() {
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
 
+        const editButton = document.createElement("button");    
+        editButton.textContent = "Edit";
+
         if (task.completed) {
             label.style.textDecoration = "line-through";
         }
@@ -47,10 +50,20 @@ function renderTasks() {
             renderTasks();
         });
 
+        editButton.addEventListener("click", () => {
+            const newText = prompt("Edit task:", task.text);
+            if (newText !== null) {
+                task.text = newText.trim() || task.text;
+                saveTasks();
+                renderTasks();
+            }
+        });
+
         label.appendChild(checkbox);
         label.appendChild(textNode);
 
         listItem.appendChild(label);
+        listItem.appendChild(editButton);
         listItem.appendChild(deleteButton);
 
         taskList.appendChild(listItem);

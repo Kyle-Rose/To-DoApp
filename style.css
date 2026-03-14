@@ -97,6 +97,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 5px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.07);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -111,6 +112,7 @@ body {
     align-items: center;
     gap: 10px;
     font-size: 15px;
+    flex: 1;
 }
 
 #taskList input[type="checkbox"] {
@@ -131,6 +133,7 @@ body {
     justify-content: center;
     transition: background 0.2s ease;
 }
+
 
 #taskList button:hover {
     background: #c0392b;
